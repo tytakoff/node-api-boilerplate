@@ -59,7 +59,7 @@
     "mocha": "^7.1.0",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0",
-    "replace-in-file": "^2.5.0",
+    "replace-in-file": "^5.0.2",
     "supertest": "^3.0.0",
     "supertest-as-promised": "^4.0.2"
   }
