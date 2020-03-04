@@ -37,7 +37,7 @@
     "dotenv": "^4.0.0",
     "eslint": "^6.8.0",
     "express": "^4.17.1",
-    "express-status-monitor": "^0.1.9",
+    "express-status-monitor": "^1.2.9",
     "http-status": "^1.0.1",
     "log4js": "^1.1.1",
     "method-override": "^2.3.10",
