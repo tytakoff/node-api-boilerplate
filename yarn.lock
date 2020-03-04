@@ -4991,9 +4991,10 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-structure@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/structure/-/structure-1.2.0.tgz#1082fdd1364f6dafff9533c86866dffe0dd1ec3d"
+structure@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/structure/-/structure-1.8.0.tgz#d8bc03fd2e3d8224e9bf0584e37f51eca55a7dd1"
+  integrity sha512-zTANT5gDzZt55qZbSrB/LQJ9txHU9TC5ZN2M9t7iTkJ23ExWPESw2zq4VITYw8O1ifDmBaerdJNNP2DlfLhUrA==
   dependencies:
     joi "^10.2.0"
     lodash "^4.16.4"
