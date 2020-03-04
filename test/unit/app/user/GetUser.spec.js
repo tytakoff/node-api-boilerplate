@@ -9,7 +9,8 @@ describe('App :: User :: GetUser', () => {
       const MockUsersRepository = {
         getById: (userId) => Promise.resolve({
           id: userId,
-          name: 'The User'
+          name: 'The User',
+          age: 46
         })
       };
 
@@ -22,6 +23,7 @@ describe('App :: User :: GetUser', () => {
       getUser.on(getUser.outputs.SUCCESS, (user) => {
         expect(user.id).to.equal(123);
         expect(user.name).to.equal('The User');
+        expect(user.age).to.equal(46);
         done();
       });
 

@@ -17,10 +17,11 @@ describe('App :: User :: UpdateUser', () => {
       });
 
       it('updates the user and emits SUCCESS', (done) => {
-        const userData = { name: 'Updated User' };
+        const userData = { name: 'Updated User', age: 47 };
 
         updateUser.on(updateUser.outputs.SUCCESS, (response) => {
           expect(response.name).to.equal('Updated User');
+          expect(response.age).to.equal(47);
           done();
         });
 
@@ -40,7 +41,7 @@ describe('App :: User :: UpdateUser', () => {
       });
 
       it('emits VALIDATION_ERROR with the error', (done) => {
-        const userData = { name: 'New User' };
+        const userData = { name: 'New User', age: 48 };
 
         updateUser.on(updateUser.outputs.VALIDATION_ERROR, (response) => {
           expect(response.message).to.equal('ValidationError');
@@ -64,7 +65,7 @@ describe('App :: User :: UpdateUser', () => {
     });
 
     it('emits NOT_FOUND with the error', (done) => {
-      const userData = { name: 'New User' };
+      const userData = { name: 'New User', age: 48 };
 
       updateUser.on(updateUser.outputs.NOT_FOUND, (response) => {
         expect(response.message).to.equal('NotFoundError');

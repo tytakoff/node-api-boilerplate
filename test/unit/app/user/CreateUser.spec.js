@@ -16,10 +16,11 @@ describe('App :: User :: CreateUser', () => {
     });
 
     it('creates the user and emits SUCCESS', (done) => {
-      const userData = { name: 'New User' };
+      const userData = { name: 'New User', age: 45 };
 
       createUser.on(createUser.outputs.SUCCESS, (response) => {
         expect(response.name).to.equal('New User');
+        expect(response.age).to.equal(45);
         done();
       });
 
@@ -39,7 +40,7 @@ describe('App :: User :: CreateUser', () => {
     });
 
     it('emits VALIDATION_ERROR with the error', (done) => {
-      const userData = { name: 'New User' };
+      const userData = { name: 'New User', age: 45 };
 
       createUser.on(createUser.outputs.VALIDATION_ERROR, (response) => {
         expect(response.message).to.equal('ValidationError');
@@ -62,7 +63,7 @@ describe('App :: User :: CreateUser', () => {
     });
 
     it('emits ERROR with the error', (done) => {
-      const userData = { name: 'New User' };
+      const userData = { name: 'New User', age: 45 };
 
       createUser.on(createUser.outputs.ERROR, (response) => {
         expect(response.message).to.equal('Some Error');

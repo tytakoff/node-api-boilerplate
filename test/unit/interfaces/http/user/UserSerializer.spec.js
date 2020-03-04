@@ -6,12 +6,14 @@ describe('Interfaces :: HTTP :: User :: UserSerializer', () => {
   it('returns id and name', () => {
     const serializedUser = UserSerializer.serialize({
       id: 123,
-      name: 'The User'
+      name: 'The User',
+      age: 23
     });
 
     expect(serializedUser).to.eql({
       id: 123,
-      name: 'The User'
+      name: 'The User',
+      age: 23
     });
   });
 
@@ -19,22 +21,25 @@ describe('Interfaces :: HTTP :: User :: UserSerializer', () => {
     const serializedUser = UserSerializer.serialize({
       id: 321,
       name: 'The User',
+      age: 25,
       unknown: 'Hello!'
     });
 
     expect(serializedUser).to.eql({
       id: 321,
+      age: 25,
       name: 'The User'
     });
   });
 
   it('is able to serialize user entity instances', () => {
-    const user = new User({ id: 1, name: 'User :)' });
+    const user = new User({ id: 1, name: 'User :)', age: 23 });
     const serializedUser = UserSerializer.serialize(user);
 
     expect(serializedUser).to.eql({
       id: 1,
-      name: 'User :)'
+      name: 'User :)',
+      age: 23
     });
   });
 });
