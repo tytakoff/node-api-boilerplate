@@ -1,12 +1,15 @@
 const Operation = require('src/app/Operation');
 
 class GetAllUsers extends Operation {
-  constructor({ usersRepository }) {
+  constructor({ usersRepository, logger }) {
     super();
     this.usersRepository = usersRepository;
+    this.logger = logger;
   }
 
   async execute() {
+    this.logger.info('GetAllUsers.execute');
+
     const { SUCCESS, ERROR } = this.outputs;
 
     try {

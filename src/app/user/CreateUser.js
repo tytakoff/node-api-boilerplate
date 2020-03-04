@@ -2,12 +2,15 @@ const Operation = require('src/app/Operation');
 const User = require('src/domain/user/User');
 
 class CreateUser extends Operation {
-  constructor({ usersRepository }) {
+  constructor({ usersRepository, logger }) {
     super();
     this.usersRepository = usersRepository;
+    this.logger = logger;
   }
 
   async execute(userData) {
+    this.logger.info(`CreateUser.execute ${JSON.stringify(userData)}`);
+
     const { SUCCESS, ERROR, VALIDATION_ERROR } = this.outputs;
 
     const user = new User(userData);
