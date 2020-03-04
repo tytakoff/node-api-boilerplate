@@ -57,7 +57,7 @@
     "factory-girl": "^5.0.4",
     "listr": "^0.14.3",
     "mocha": "^7.1.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^2.0.2",
     "nyc": "^11.2.1",
     "replace-in-file": "^2.5.0",
     "supertest": "^3.0.0",
