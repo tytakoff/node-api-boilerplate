@@ -40,7 +40,7 @@
     "express-status-monitor": "^1.2.9",
     "http-status": "^1.4.2",
     "log4js": "^1.1.1",
-    "method-override": "^2.3.10",
+    "method-override": "^3.0.0",
     "morgan": "^1.9.1",
     "pg": "^6.4.2",
     "pm2": "^2.4.2",
