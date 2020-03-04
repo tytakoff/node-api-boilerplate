@@ -7,13 +7,15 @@ describe('API :: POST /api/users', () => {
       const { body } = await request()
         .post('/api/users')
         .send({
-          name: 'New User'
+          name: 'New User',
+          age: 25
         })
         .expect(201);
 
       expect(body.id).to.exist;
       expect(body.name).to.equal('New User');
-      expect(body).to.have.all.keys('id', 'name');
+      expect(body.age).to.equal(25);
+      expect(body).to.have.all.keys('id', 'name', 'age');
     });
   });
 

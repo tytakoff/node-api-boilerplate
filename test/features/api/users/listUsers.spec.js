@@ -6,8 +6,8 @@ describe('API :: GET /api/users', () => {
   context('when there are users', () => {
     beforeEach(() => {
       return factory.createMany('user', 2, [
-        { name: 'First' },
-        { name: 'Second' }
+        { name: 'First', age: 11 },
+        { name: 'Second', age: 22 }
       ]);
     });
 
@@ -19,10 +19,12 @@ describe('API :: GET /api/users', () => {
       expect(body).to.have.lengthOf(2);
 
       expect(body[0].name).to.equal('First');
-      expect(body[0]).to.have.all.keys('id', 'name');
+      expect(body[0].age).to.equal(11);
+      expect(body[0]).to.have.all.keys('id', 'name', 'age');
 
       expect(body[1].name).to.equal('Second');
-      expect(body[1]).to.have.all.keys('id', 'name');
+      expect(body[1].age).to.equal(22);
+      expect(body[1]).to.have.all.keys('id', 'name', 'age');
     });
   });
 

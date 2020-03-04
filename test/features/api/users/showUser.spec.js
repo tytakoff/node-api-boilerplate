@@ -6,7 +6,8 @@ describe('API :: GET /api/users/:id', () => {
   context('when user exists', () => {
     it('returns the user and status 200', async () => {
       const user = await factory.create('user', {
-        name: 'The User'
+        name: 'The User',
+        age: 27
       });
 
       const { body } = await request()
@@ -15,6 +16,7 @@ describe('API :: GET /api/users/:id', () => {
 
       expect(body.id).to.equal(user.id);
       expect(body.name).to.equal('The User');
+      expect(body.age).to.equal(27);
     });
   });
 
